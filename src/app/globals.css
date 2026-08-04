@@ -1,26 +1,155 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f7f8;
+  --surface: #ffffff;
+  --surface-alt: #eef0f1;
+  --border: #e2e4e6;
+  --foreground: #1a1d1e;
+  --muted: #6b7280;
+  --accent: #2f8f5b;
+  --accent-foreground: #ffffff;
+  --accent-soft: #e7f4ec;
+  --danger: #c0432f;
+  --danger-soft: #fbe9e6;
+  --graphite: #23272a;
+  --shadow-color: 220 15% 60%;
+}
+
+:root.dark {
+  --background: #16181a;
+  --surface: #1e2124;
+  --surface-alt: #26292d;
+  --border: #33373b;
+  --foreground: #f1f2f3;
+  --muted: #9aa0a6;
+  --accent: #3fae72;
+  --accent-foreground: #0d130f;
+  --accent-soft: #1f3327;
+  --danger: #e0685a;
+  --danger-soft: #3a2422;
+  --graphite: #101214;
+  --shadow-color: 220 30% 4%;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-border: var(--border);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-graphite: var(--graphite);
+  --font-sans: var(--font-inter);
+  --animate-fade-in: fade-in 0.2s ease-out;
+  --animate-scale-in: scale-in 0.15s ease-out;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/*
+  Component classes live in @layer components so Tailwind always places them
+  before the utilities layer in the generated stylesheet. Without this layer,
+  a plain class like `.card` (defined after `@import "tailwindcss"` in source
+  order) ties in specificity with single-class utilities such as `border-accent`
+  and wins the cascade purely by appearing later, silently overriding
+  utility overrides like a highlighted "today" border or a danger-colored card.
+*/
+@layer components {
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.85rem;
+  }
+
+  .input {
+    width: 100%;
+    border-radius: 0.6rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--foreground);
+    padding: 0.55rem 0.75rem;
+    font-size: 0.875rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .input:focus {
+    border-color: var(--accent);
+  }
+
+  .input[aria-invalid="true"] {
+    border-color: var(--danger);
+  }
+
+  .btn-accent {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  .btn-accent:hover {
+    filter: brightness(1.08);
+  }
+
+  .btn-accent:disabled {
+    opacity: 0.55;
+    filter: none;
+    cursor: not-allowed;
+  }
+
+  .scroll-x {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
 }

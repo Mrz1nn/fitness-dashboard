@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="title desc">
+  <title id="title">Fitness Dashboard preview</title>
+  <desc id="desc">Mockup of a fitness dashboard showing metric cards, a weekly calendar, and a student list with a weight progress chart.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16181a"/>
+      <stop offset="100%" stop-color="#1e2124"/>
+    </linearGradient>
+    <linearGradient id="accentBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3fae72"/>
+      <stop offset="100%" stop-color="#2f8f5b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- top bar -->
+  <rect x="0" y="0" width="1200" height="64" fill="#1e2124"/>
+  <rect x="0" y="63" width="1200" height="1" fill="#33373b"/>
+  <g>
+    <rect x="32" y="20" width="24" height="24" rx="6" fill="#3fae72"/>
+    <line x1="38" y1="32" x2="50" y2="32" stroke="#101214" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="40" y1="27" x2="40" y2="37" stroke="#101214" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="48" y1="27" x2="48" y2="37" stroke="#101214" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="68" y="37" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#f1f2f3">Fitness Dashboard</text>
+  </g>
+  <circle cx="1152" cy="32" r="14" fill="#26292d" stroke="#33373b"/>
+  <circle cx="1152" cy="32" r="5" fill="#9aa0a6"/>
+
+  <!-- metric cards -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <!-- card template repeated 4x -->
+    <g>
+      <rect x="32" y="96" width="264" height="92" rx="14" fill="#1e2124" stroke="#33373b"/>
+      <rect x="32" y="96" width="4" height="92" rx="2" fill="url(#accentBar)"/>
+      <text x="56" y="132" font-size="12" fill="#9aa0a6">ACTIVE STUDENTS</text>
+      <text x="56" y="166" font-size="30" font-weight="700" fill="#f1f2f3">12</text>
+    </g>
+    <g>
+      <rect x="312" y="96" width="264" height="92" rx="14" fill="#1e2124" stroke="#33373b"/>
+      <rect x="312" y="96" width="4" height="92" rx="2" fill="url(#accentBar)"/>
+      <text x="336" y="132" font-size="12" fill="#9aa0a6">WORKOUTS TODAY</text>
+      <text x="336" y="166" font-size="30" font-weight="700" fill="#f1f2f3">5</text>
+    </g>
+    <g>
+      <rect x="592" y="96" width="264" height="92" rx="14" fill="#1e2124" stroke="#33373b"/>
+      <rect x="592" y="96" width="4" height="92" rx="2" fill="url(#accentBar)"/>
+      <text x="616" y="132" font-size="12" fill="#9aa0a6">WEEKLY ATTENDANCE</text>
+      <text x="616" y="166" font-size="30" font-weight="700" fill="#f1f2f3">87%</text>
+    </g>
+    <g>
+      <rect x="872" y="96" width="296" height="92" rx="14" fill="#1e2124" stroke="#33373b"/>
+      <rect x="872" y="96" width="4" height="92" rx="2" fill="url(#accentBar)"/>
+      <text x="896" y="132" font-size="12" fill="#9aa0a6">AVG. EVOLUTION</text>
+      <text x="896" y="166" font-size="30" font-weight="700" fill="#3fae72">+4.2%</text>
+    </g>
+  </g>
+
+  <!-- weekly calendar -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="32" y="222" font-size="14" font-weight="700" fill="#f1f2f3">This Week</text>
+    <rect x="32" y="236" width="1136" height="96" rx="14" fill="#1e2124" stroke="#33373b"/>
+    <g font-size="11" fill="#9aa0a6">
+      <text x="70" y="258">MON</text>
+      <text x="232" y="258">TUE</text>
+      <text x="394" y="258">WED</text>
+      <text x="556" y="258">THU</text>
+      <text x="718" y="258">FRI</text>
+      <text x="880" y="258">SAT</text>
+      <text x="1042" y="258">SUN</text>
+    </g>
+    <g fill="#3fae72">
+      <circle cx="80" cy="300" r="5"/>
+      <circle cx="96" cy="300" r="5"/>
+      <circle cx="258" cy="300" r="5"/>
+      <circle cx="420" cy="300" r="5"/>
+      <circle cx="436" cy="300" r="5"/>
+      <circle cx="452" cy="300" r="5"/>
+      <circle cx="744" cy="300" r="5"/>
+      <circle cx="906" cy="300" r="5"/>
+      <circle cx="922" cy="300" r="5"/>
+    </g>
+    <rect x="536" y="242" width="76" height="84" rx="10" fill="none" stroke="#3fae72" stroke-width="1.5"/>
+  </g>
+
+  <!-- student list -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="32" y="356" width="560" height="238" rx="14" fill="#1e2124" stroke="#33373b"/>
+    <text x="56" y="388" font-size="13" font-weight="700" fill="#f1f2f3">Students</text>
+
+    <g>
+      <circle cx="70" cy="424" r="16" fill="#1f3327"/>
+      <text x="70" y="429" font-size="11" font-weight="700" fill="#3fae72" text-anchor="middle">AR</text>
+      <text x="96" y="421" font-size="13" fill="#f1f2f3">Alana Reis</text>
+      <text x="96" y="437" font-size="11" fill="#9aa0a6">Hypertrophy</text>
+      <rect x="500" y="412" width="60" height="20" rx="10" fill="#1f3327"/>
+      <text x="530" y="426" font-size="10" fill="#3fae72" text-anchor="middle">ACTIVE</text>
+    </g>
+    <line x1="56" y1="454" x2="568" y2="454" stroke="#33373b"/>
+
+    <g>
+      <circle cx="70" cy="480" r="16" fill="#26292d"/>
+      <text x="70" y="485" font-size="11" font-weight="700" fill="#9aa0a6" text-anchor="middle">BC</text>
+      <text x="96" y="477" font-size="13" fill="#f1f2f3">Bruno Castilho</text>
+      <text x="96" y="493" font-size="11" fill="#9aa0a6">Weight loss</text>
+      <rect x="500" y="468" width="60" height="20" rx="10" fill="#1f3327"/>
+      <text x="530" y="482" font-size="10" fill="#3fae72" text-anchor="middle">ACTIVE</text>
+    </g>
+    <line x1="56" y1="510" x2="568" y2="510" stroke="#33373b"/>
+
+    <g>
+      <circle cx="70" cy="536" r="16" fill="#26292d"/>
+      <text x="70" y="541" font-size="11" font-weight="700" fill="#9aa0a6" text-anchor="middle">CM</text>
+      <text x="96" y="533" font-size="13" fill="#f1f2f3">Carla Menezes</text>
+      <text x="96" y="549" font-size="11" fill="#9aa0a6">Conditioning</text>
+      <rect x="500" y="524" width="60" height="20" rx="10" fill="#3a2422"/>
+      <text x="530" y="538" font-size="10" fill="#e0685a" text-anchor="middle">PAUSED</text>
+    </g>
+  </g>
+
+  <!-- weight chart -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="608" y="356" width="560" height="238" rx="14" fill="#1e2124" stroke="#33373b"/>
+    <text x="632" y="388" font-size="13" font-weight="700" fill="#f1f2f3">Weight Progress</text>
+    <text x="632" y="408" font-size="11" fill="#9aa0a6">Alana Reis, last 12 weeks</text>
+    <polyline points="632,560 692,548 752,552 812,530 872,520 932,505 992,498 1052,486 1112,478 1144,470"
+      fill="none" stroke="#3fae72" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="632,560 692,548 752,552 812,530 872,520 932,505 992,498 1052,486 1112,478 1144,470 1144,584 632,584"
+      fill="#1f3327" opacity="0.5" stroke="none"/>
+    <circle cx="1144" cy="470" r="4.5" fill="#3fae72"/>
+  </g>
+
+  <text x="1168" y="616" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#6b7280" text-anchor="end">Fictional data for demonstration only</text>
+</svg>

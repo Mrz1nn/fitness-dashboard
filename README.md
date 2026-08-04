@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fitness Dashboard
+
+![Fitness Dashboard preview](public/preview.svg)
+
+A demo dashboard for personal trainers to track students, workouts, and physical progress. Built as a portfolio piece: fully client-side, no backend, no accounts, and no real data.
+
+## Features
+
+- Overview metrics: active students, workouts scheduled today, weekly attendance rate, and average evolution
+- Weekly calendar showing scheduled workouts per day
+- Student list with generated-initials avatars, goal, status, and last activity
+- Search by name and filter by goal (hypertrophy, weight loss, conditioning, mobility)
+- Create, edit, and remove students
+- Student detail view with height, current weight, evolution percentage, and a weight history chart (plain SVG, no external chart library)
+- Create and edit workouts with exercises (sets, reps, load, notes)
+- Mark workouts as completed directly from the workout history list
+- Well-designed empty states for no students / no matching results / no workouts
+- Light and dark theme, persisted and applied before first paint
+- Fully responsive layout, from mobile to desktop
+- Accessible modals: focus trap, `Escape` to close, focus restored on close, `:focus-visible` outlines
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org) (App Router)
+- [React](https://react.dev)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS v4](https://tailwindcss.com)
+- [lucide-react](https://lucide.dev) for icons
+
+## Data & Storage
+
+All data (students, workouts, theme preference) is fictional seed data generated on first load and persisted in the browser's `localStorage`. There is no database, no authentication, and no external API calls. Clearing `localStorage` for this site resets the app back to the seeded demo data.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev`: start the development server
+- `npm run build`: create a production build
+- `npm run start`: run the production build
+- `npm run lint`: run ESLint
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/            App Router entry point, global styles, root layout
+  components/     UI components (cards, modals, charts, dashboard widgets)
+  hooks/          Client hooks for students, workouts, theme, toasts, modal a11y
+  lib/            Types, localStorage persistence, seed data, metrics, date utils
+public/
+  preview.svg     Dashboard preview image used in this README
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- All students, names, and workout data are fictional and generated at runtime; nothing represents a real person, gym, or brand.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Licensed under the [MIT License](LICENSE).
