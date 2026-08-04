@@ -67,7 +67,7 @@ export function StudentDetail({
       <div className="mt-4 grid gap-4 sm:grid-cols-3">
         <div className="card p-4">
           <p className="text-xs font-medium uppercase text-[var(--muted)]">Current Weight</p>
-          <p className="mt-1 text-xl font-semibold">{latest ? `${latest.weightKg} kg` : "-"}</p>
+          <p className="mt-1 text-xl font-semibold">{latest ? `${latest.weightKg} kg` : "No data"}</p>
         </div>
         <div className="card p-4">
           <p className="text-xs font-medium uppercase text-[var(--muted)]">Height</p>
